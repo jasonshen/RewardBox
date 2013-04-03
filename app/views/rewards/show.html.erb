@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @reward.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @reward.description %>
+</p>
+
+<p>
+  <b>Size:</b>
+  <%= @reward.size %>
+</p>
+
+
+<%= link_to 'Edit', edit_reward_path(@reward) %> |
+<%= link_to 'Back', rewards_path %>
