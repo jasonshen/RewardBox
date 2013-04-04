@@ -1,4 +1,17 @@
-<h1>Listing rewards</h1>
+<script>
+function reloadPage()
+  {
+  location.reload()
+  }
+</script>
+
+<h1>RewardBox</h1>
+
+<p>Your randomly generated reward is: </p>
+<%= render 'rewards/new_reward_partial' %>
+
+<p><input type="button" value="Get Another Reward" onclick="reloadPage()"></p>
+<br><br><br><br>
 
 <table>
   <tr>
@@ -15,6 +28,7 @@
     <td><%= reward.name %></td>
     <td><%= reward.description %></td>
     <td><%= reward.size %></td>
+    <td><%= reward.id %></td>
     <td><%= link_to 'Show', reward %></td>
     <td><%= link_to 'Edit', edit_reward_path(reward) %></td>
     <td><%= link_to 'Destroy', reward, method: :delete, data: { confirm: 'Are you sure?' } %></td>
