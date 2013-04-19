@@ -1,5 +1,6 @@
 RewardBox::Application.routes.draw do
   resources :rewards
+  root to: 'rewards#index'
 
 
   # The priority is based upon order of creation:
