@@ -1,4 +1,6 @@
 RewardBox::Application.routes.draw do
+  devise_for :users
+
   resources :rewards
   root to: 'rewards#index'
 
