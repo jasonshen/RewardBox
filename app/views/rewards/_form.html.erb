@@ -1,4 +1,4 @@
-<%= form_for(@reward) do |f| %>
+<%= simple_form_for(@reward, :html => {:class => 'form-horizontal' }) do |f| %>
   <% if @reward.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@reward.errors.count, "error") %> prohibited this reward from being saved:</h2>
@@ -11,19 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :size %>
+  <%= f.association :user %>
+
+
+
+    <div class="form-actions">
+    <%= f.button :submit %>
   </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :size %><br />
-    <%= f.number_field :size %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+
 <% end %>

@@ -15,6 +15,11 @@
   <%= @reward.size %>
 </p>
 
+<p>
+	<b>User:</b>
+	<%= @reward.user.first_name %>
+</p>
+
 
 <%= link_to 'Edit', edit_reward_path(@reward) %> |
 <%= link_to 'Back', rewards_path %>

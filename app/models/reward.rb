@@ -1,5 +1,6 @@
 class Reward < ActiveRecord::Base
-  attr_accessible :description, :name, :size
+  attr_accessible :description, :name, :size, :user_id
+  belongs_to :user
 
   def self.redeem
   	offset = rand(Reward.count)
