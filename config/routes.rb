@@ -1,4 +1,18 @@
 RewardBox::Application.routes.draw do
+  get "task/new"
+
+  get "task/create"
+
+  get "task/update"
+
+  get "task/edit"
+
+  get "task/destroy"
+
+  get "task/index"
+
+  get "task/show"
+
   devise_for :users
 
   resources :rewards
