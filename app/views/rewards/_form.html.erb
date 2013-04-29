@@ -14,7 +14,7 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :size %>
-  <%= f.association :user %>
+  <%= f.input :user_id, collection: User.all, label_method: :email %>
 
 
 
