@@ -1,6 +1,12 @@
 <a href="#" class="brand">RewardBox</a>
 <ul class="nav">
+
 <li><a href="#">About</a></li>
 <li><a href="#">How it Works</a></li>
 <li><a href="#">Contact</a></li>
 </ul>
+
+<ul class="nav pull-right">
+	<li><%= link_to "Register", new_user_registration_path %></li>
+	<li><%= link_to "Sign In", new_user_session_path %></li>
+	<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>

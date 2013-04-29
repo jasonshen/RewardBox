@@ -7,7 +7,6 @@ class TaskController < ApplicationController
       format.json { render json: @reward }
     end
   end
-  end
 
   def create
   end
