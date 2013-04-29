@@ -1,12 +1,13 @@
 <a href="#" class="brand">RewardBox</a>
 <ul class="nav">
-
-<li><a href="#">About</a></li>
-<li><a href="#">How it Works</a></li>
-<li><a href="#">Contact</a></li>
+<li><%= link_to "+ New Reward", new_reward_path %></li>
 </ul>
 
 <ul class="nav pull-right">
-	<li><%= link_to "Register", new_user_registration_path %></li>
-	<li><%= link_to "Sign In", new_user_session_path %></li>
-	<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+	<% if user_signed_in? %>
+		<li><%= link_to current_user.full_name, edit_user_registration_path %></li>
+		<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
+	<% else %>
+		<li><%= link_to "Register", new_user_registration_path %></li>
+		<li><%= link_to "Sign In", new_user_session_path %></li>
+	<% end %>

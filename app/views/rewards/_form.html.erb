@@ -13,8 +13,8 @@
 
   <%= f.input :name %>
   <%= f.input :description %>
-  <%= f.input :size %>
-  <%= f.input :user_id, collection: User.all, label_method: :email %>
+  <%= f.input :size, collection: 1..3, prompt: "Bigger # = Bigger Reward" %>
+  <%= f.input :user_id, collection: User.all, label_method: :full_name %>
 
 
 
