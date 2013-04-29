@@ -1,4 +1,10 @@
 RewardBox::Application.routes.draw do
+  resources :rewards
+  
+  root to: 'rewards#index'
+
+  devise_for :users
+
   get "task/new"
 
   get "task/create"
@@ -13,10 +19,8 @@ RewardBox::Application.routes.draw do
 
   get "task/show"
 
-  devise_for :users
 
-  resources :rewards
-  root to: 'rewards#index'
+
 
 
 
