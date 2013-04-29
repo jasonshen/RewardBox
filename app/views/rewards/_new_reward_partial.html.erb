@@ -1,5 +1,1 @@
-<% if Reward.all == nil %>
-		<div class="big-reward"><%= Reward.redeem.description %> </div>
-<% else %>
-<div class="big-reward">You have no rewards! Make one.</div>
-<% end %>
+<div class="big-reward"><%= Reward.redeem.description rescue "You have no rewards!" %> </div>
