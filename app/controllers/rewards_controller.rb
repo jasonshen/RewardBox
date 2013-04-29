@@ -1,4 +1,6 @@
 class RewardsController < ApplicationController
+  # Makes sure they are logged in before they do anything
+  before_filter :require_login
   # GET /rewards
   # GET /rewards.json
   def index
@@ -80,4 +82,16 @@ class RewardsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+  private
+
+  def require_login
+    unless  user_signed_in?
+      flash[:error] = "You must be logged in do that. Sorry! Luckily logging in / signing up takes just a sec! =)"
+      redirect_to new_user_session_path
+    end
+  end
+
+
 end
