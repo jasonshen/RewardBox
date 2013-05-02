@@ -5,11 +5,16 @@ body {
 .big-reward {
 	font-size: 3em;
 	font-weight: bold;
-	line-height: 1em;
+	line-height: 1.2em;
 	margin: 30px 0px;
-	padding: 20px;
+	padding: 25px;
 	color: white;
 	background-color: #1fc29e;
+}
+
+.big-reward-button {
+	margin: 30px 0px;
+	padding: 25px;
 }
 
 /* Custom container */

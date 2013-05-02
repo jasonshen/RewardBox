@@ -1,1 +1,3 @@
-<div class="big-reward"><%= Reward.redeem.description rescue "You have no rewards!" %> </div>
+<div class="big-reward">
+	<%= current_user.redeem.description  %>
+</div>

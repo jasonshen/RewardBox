@@ -14,7 +14,7 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :size, collection: 1..3, prompt: "Bigger # = Bigger Reward" %>
-  <%= f.input :user_id, collection: User.all, label_method: :full_name %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
 
 
 

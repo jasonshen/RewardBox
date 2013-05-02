@@ -15,4 +15,9 @@ class User < ActiveRecord::Base
     first_name + " " + last_name
   end
 
+  def redeem
+    offset = rand(rewards.count)
+    return rewards.first(:offset => offset)
+  end
+
 end
