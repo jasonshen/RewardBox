@@ -1,9 +1,25 @@
 RewardBox::Application.routes.draw do
+
   resources :rewards
   
   root to: 'rewards#index'
 
   devise_for :users
+
+  get "static_pages/home"
+
+  get "static_pages/about"
+
+  get "static_pages/help"
+
+  get "static_pages/contact"
+
+  get "static_pages/howitworks"
+
+  match "/about", to: "static_pages#about"
+  match "/contact", to: "static_pages#contact"
+  match "/help", to: "static_pages#help"
+  match "/howitworks", to: "static_pages#howitworks"
 
   get "task/new"
 
