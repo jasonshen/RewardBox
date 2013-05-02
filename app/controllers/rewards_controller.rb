@@ -1,14 +1,16 @@
 class RewardsController < ApplicationController
   # Makes sure they are logged in before they do anything
-  before_filter :require_login
+  before_filter :require_login, except: [:index]
   # GET /rewards
   # GET /rewards.json
   def index
-    @rewards = current_user.rewards.all
+    if user_signed_in?
+      @rewards = current_user.rewards.all
 
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @rewards }
+      respond_to do |format|
+        format.html # index.html.erb
+        format.json { render json: @rewards }
+      end
     end
   end
 

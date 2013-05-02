@@ -1,55 +1,68 @@
-<script>
-function reloadPage()
-  {
-  location.reload()
-  }
-</script>
+<% if user_signed_in? %>
+  <script>
+  function reloadPage()
+    {
+    location.reload()
+    }
+  </script>
 
-<h3>Good job! Here's your reward: </h3>
-<div class="row">
-  <div class="span8">
-    <%= render 'rewards/new_reward_partial' %>
+  <h3>Good job! Here's your reward: </h3>
+  <div class="row">
+    <div class="span8">
+      <%= render 'rewards/new_reward_partial' %>
+    </div>
+
+    <div class="span4">
+      <div class="big-reward-button">
+       <p><a href="#" class="btn btn-large" value="Get Another Reward" onclick="reloadPage()">Get Another Reward <i class="icon-heart"></i></a></p>
+      </div>
+    </div>
   </div>
 
-  <div class="span4">
-    <div class="big-reward-button">
-     <p><a href="#" class="btn btn-large" value="Get Another Reward" onclick="reloadPage()">Get Another Reward <i class="icon-heart"></i></a></p>
+<div class="accordion" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        Edit the Rewards here
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse">
+      <div class="accordion-inner">
+          <table>
+            <tr>
+              <th>Name</th>
+              <th>Description</th>
+              <th>Size</th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+
+          <% @rewards.each do |reward| %>
+            <tr>
+              <td><%= reward.name %></td>
+              <td><%= reward.description %></td>
+              <td><%= reward.size %></td>
+              <td><%= link_to 'Show', reward %></td>
+              <td><%= link_to 'Edit', edit_reward_path(reward) %></td>
+              <td><%= link_to 'Destroy', reward, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </table>
+        <%= link_to 'New Reward', new_reward_path %>
+      </div>
     </div>
   </div>
 </div>
 
-<div class="accordion" id="accordion2">
-      <div class="accordion-group">
-        <div class="accordion-heading">
-          <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-            Edit the Rewards here
-          </a>
-        </div>
-        <div id="collapseOne" class="accordion-body collapse">
-          <div class="accordion-inner">
-              <table>
-                <tr>
-                  <th>Name</th>
-                  <th>Description</th>
-                  <th>Size</th>
-                  <th></th>
-                  <th></th>
-                  <th></th>
-                </tr>
+<% else %>
 
-              <% @rewards.each do |reward| %>
-                <tr>
-                  <td><%= reward.name %></td>
-                  <td><%= reward.description %></td>
-                  <td><%= reward.size %></td>
-                  <td><%= link_to 'Show', reward %></td>
-                  <td><%= link_to 'Edit', edit_reward_path(reward) %></td>
-                  <td><%= link_to 'Destroy', reward, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-                </tr>
-              <% end %>
-            </table>
-            <%= link_to 'New Reward', new_reward_path %>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="container-narrow" align="center">
+    <h1>It's never been more fun to do the right thing</h1>
+    <img src="#" height="300" width="400">
+    <p>RewardBox is an easy way to create and</p>
+    <h3>Questions and Answers</h3>
+
+</div>
+
+<% end %>
