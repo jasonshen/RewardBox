@@ -1,10 +1,8 @@
-<% if user_signed_in? %>
   <script>
-  function reloadPage()
-    {
-    location.reload()
-    }
+    function reloadPage() {location.reload()}
   </script>
+
+<% if user_signed_in? %>
 
   <h3>Good job! Here's your reward: </h3>
   <div class="row">
@@ -59,9 +57,16 @@
 
   <div class="container-narrow" align="center">
     <h1>It's never been more fun to do the right thing</h1>
-    <img src="#" height="300" width="400">
-    <p>RewardBox is an easy way to create and</p>
-    <h3>Questions and Answers</h3>
+    <p>Did you just get some stuff done? Did your daily meditation? Drank a glass of water? Avoid looking at Hacker News for the first hour of your day? Great job! Here's your reward:</p>
+    <div class="big-reward">
+      <%= Reward.test_redeem.description %>
+    </div>
+    <div class="big-reward-button">
+       <p>
+        <a href="#" class="btn btn-primary btn-large" value="Get Another Reward" onclick="reloadPage()">Get Another Reward <i class="icon-heart"></i></a>
+        <%= link_to "Sign Up to create your own rewards", new_user_registration_path, class: "btn btn-large" %>
+       </p>
+     </div>
 
 </div>
 
