@@ -1,14 +1,14 @@
 <%= link_to "RewardBox", root_path, class: "brand" %>
 <ul class="nav">
-	<% if user_signed_in? rescue "help!" %>
-		<li><%= link_to "+ New Reward", new_reward_path %></li>
+	<% if user_signed_in? %>
+		<li><%= link_to "+ New Reward", new_reward_path rescue "help!" %></li>
 	<% else %>
 	<% end %>
 </ul>
 
 <ul class="nav pull-right">
-	<% if user_signed_in? rescue "help!" %>
-		<li><%= link_to current_user.full_name, edit_user_registration_path %></li>
+	<% if user_signed_in? %>
+		<li><%= link_to current_user.full_name, edit_user_registration_path rescue "help!" %></li>
 		<li><%= link_to "Sign out", destroy_user_session_path, :method => :delete %></li>
 	<% else %>
 		<li><%= link_to "Register", new_user_registration_path %></li>
