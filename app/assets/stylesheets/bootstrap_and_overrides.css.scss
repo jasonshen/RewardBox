@@ -1,9 +1,19 @@
 @import "bootstrap";
+@import "bootstrap-responsive";
+
+
 body {
 	padding-top: 60px;
-	}
+}
+
+@media screen and (max-width: 980px) {
+    body { 
+    	padding-top: 0px;
+    }
+}
+
 .big-reward {
-	font-size: 3em;
+	font-size: 3.5em;
 	font-weight: bold;
 	line-height: 1.2em;
 	margin: 30px 0px;
@@ -17,11 +27,65 @@ body {
 	padding: 25px;
 }
 
+.title-button {
+	margin: 5px;
+	padding: 15px;
+}
+
+p {
+	font-size: 1.2em;
+	line-height: 1.4em;
+	margin: 5px;
+}
+
+h3 {
+	font-weight: 200;
+	color: #1fc29e;
+}
+
+
 /* Custom container */
 .container-narrow {
 	margin: 0 auto;
 	max-width: 700px;
 }
 
+.subtitle {
+	margin: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #111;
+	font-weight: 200;
+	font-size: 1.5em;
+}
 
-@import "bootstrap-responsive";
+.maintitle	{
+	font-size: 4em;
+	color: #1fc29e;
+}
+
+
+
+/* Footer
+-------------------------------------------------- */
+
+.footer {
+  padding: 30px 0;
+  margin-top: 70px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f5f5f5;
+}
+.footer p {
+  margin-bottom: 0;
+  color: #777;
+}
+.footer-links {
+  margin: 10px 0;
+}
+.footer-links li {
+  display: inline;
+  padding: 0 2px;
+}
+.footer-links li:first-child {
+  padding-left: 0;
+}
