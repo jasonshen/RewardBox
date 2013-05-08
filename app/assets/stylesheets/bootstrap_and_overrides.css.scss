@@ -38,11 +38,15 @@ p {
 	margin: 5px;
 }
 
-h3 {
+h2, h3 {
 	font-weight: 200;
 	color: #1fc29e;
 }
 
+h1 {
+	font-weight: 400;
+	color: #555;
+}
 
 /* Custom container */
 .container-narrow {

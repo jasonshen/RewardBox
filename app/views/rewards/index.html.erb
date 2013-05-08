@@ -40,22 +40,44 @@
 
 <% else %>
 
-  <div class="container-narrow" align="center">
-    <%= image_tag "/assets/RewardBoxWordmark.png" %>
-    <p class="subtitle">A collection of personal incentives to help you tackle your least favorite activities.</p>
-    <div class="big-reward">
-      <%= Reward.test_redeem.description %>
+<div class="container-narrow" align="center">
+  <%= image_tag "/assets/RewardBoxWordmark.png" %>
+  <p class="subtitle">Because sometimes "trying harder" isn't enough to get the job done</p>
+  <div class="big-reward">
+    <%= Reward.test_redeem.description %>
+  </div>
+  <div>
+     <p>
+      <a href="#" class="btn btn-primary btn-large title-button" value="Get Another Reward" onclick="reloadPage()">Generate new reward <i class="icon-heart"></i></a>
+      <%= link_to "Start your own collection", new_user_registration_path, class: "btn btn-large title-button" %>
+     </p>
+   </div>
+    <br>
+   <div class="muted">
+    <p align="center">Version 0.8 | (<a href="https://github.com/jasonshen/RewardBox">Github</a>) </p>
+  </div>
+  <div class="row">
+    <br>
+    <h1>How It Works</h1>
+    <br>
+  </div>
+  <div class="row-fluid">
+    <div class="span4">
+      <%= image_tag "/assets/plusicon.png", class: "align center" %>
+      <h3>1) Create Rewards</h3>
+      <p>Create a personal collection of activities and things you enjoy.</p>
     </div>
-    <div>
-       <p>
-        <a href="#" class="btn btn-primary btn-large title-button" value="Get Another Reward" onclick="reloadPage()">Redeem another reward <i class="icon-heart"></i></a>
-        <%= link_to "Create your own collection", new_user_registration_path, class: "btn btn-large title-button" %>
-       </p>
-     </div>
-      <br>
-     <div class="muted">
-      <p align="center">Version 0.8 | (<a href="https://github.com/jasonshen/RewardBox">Github</a>) </p>
+    <div class="span4">
+      <%= image_tag "/assets/workicon.png", class: "align center" %>
+      <h3>2) Do Some Work</h3>
+      <p>Sometimes work isn’t fun. Now you have a little more motivation to get it done.</p>
     </div>
+    <div class="span4">
+      <%= image_tag "/assets/gifticon.png", class: "align center" %>
+      <h3>3) Redeem Rewards</h3>
+      <p>Finished? Great job! Enjoy a guilt-free reward from your collection.</p>
+    </div>
+  </div>
 </div>
 
 <div class="footer muted">
