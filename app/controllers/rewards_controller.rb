@@ -60,10 +60,10 @@ class RewardsController < ApplicationController
   # PUT /rewards/1
   # PUT /rewards/1.json
   def update
-    @reward = Reward.find(params[:id])
+    @reward = current_user.rewards.find(params[:id])
 
     respond_to do |format|
-      if @reward.update_attributes(params[:reward])
+      if @reward.update_attributes(rewards_params)
         format.html { redirect_to @reward, notice: 'Reward was successfully updated.' }
         format.json { head :no_content }
       else
@@ -93,6 +93,10 @@ class RewardsController < ApplicationController
       flash[:error] = "You must be logged in do that. Sorry! Luckily logging in / signing up takes just a sec! =)"
       redirect_to new_user_session_path
     end
+  end
+
+  def rewards_params
+    params[:reward].slice(:name, :description, :size)
   end
 
 

@@ -19,7 +19,7 @@ class Reward < ActiveRecord::Base
     reward_array.push(Reward.new(name: "fruit", description: "Find, prepare and eat some fresh fruit.", size: 3))
     reward_array.push(Reward.new(name: "trailer", description: "Watch the trailer for an upcoming flick.", size: 3))
     reward_array.push(Reward.new(name: "nap", description: "Find a dark place and take a 15 min nap.", size: 3))
-    reward_array.push(Reward.new(name: "takeout", description: "Order dinner your favorite takeout place.", size: 3))
+    reward_array.push(Reward.new(name: "takeout", description: "Order takeout from your favorite restaurant.", size: 3))
     reward_array.push(Reward.new(name: "facebook", description: "Five minutes on Facebook. Set a timer.", size: 3))
     reward_array.push(Reward.new(name: "twitter", description: "Think of something snarky/clever. Tweet it.", size: 3))
     reward_array.push(Reward.new(name: "caffeine", description: "Get yourself some fresh coffee / Red Bull", size: 3))
