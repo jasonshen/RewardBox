@@ -12,7 +12,7 @@
 
     <div class="span4">
       <div class="big-reward-button">
-       <p><a href="#" class="btn btn-large" value="Get Another Reward" onclick="reloadPage()">Redeem Another Reward <i class="icon-heart"></i></a></p>
+       <p><a href="#" class="btn btn-large" value="Generate new reward" onclick="reloadPage()">Generate new reward <i class="icon-gift icon-3x"></i></a></p>
       </div>
     </div>
   </div>
@@ -42,13 +42,13 @@
 
 <div class="container-narrow" align="center">
   <%= image_tag "/assets/RewardBoxWordmark.png" %>
-  <p class="subtitle">Because sometimes "trying harder" isn't enough to get the job done</p>
+  <p class="subtitle">A boost of motivation when you've got a not-so-fun job to do</p>
   <div class="big-reward">
     <%= Reward.test_redeem.description %>
   </div>
   <div>
      <p>
-      <a href="#" class="btn btn-primary btn-large title-button" value="Get Another Reward" onclick="reloadPage()">Generate new reward <i class="icon-heart"></i></a>
+      <a href="#" class="btn btn-primary btn-large title-button" value="Get Another Reward" onclick="reloadPage()">Generate new reward <i class="icon-gift icon-large icon-white"></i></a>
       <%= link_to "Start your own collection", new_user_registration_path, class: "btn btn-large title-button" %>
      </p>
    </div>
@@ -58,7 +58,7 @@
   </div>
   <div class="row">
     <br>
-    <h1>How It Works</h1>
+    <h1>---- How It Works ----</h1>
     <br>
   </div>
   <div class="row-fluid">
@@ -74,7 +74,7 @@
     </div>
     <div class="span4">
       <%= image_tag "/assets/gifticon.png", class: "align center" %>
-      <h3>3) Redeem Rewards</h3>
+      <h3>3) Enjoy Yourself</h3>
       <p>Finished? Great job! Enjoy a guilt-free reward from your collection.</p>
     </div>
   </div>
