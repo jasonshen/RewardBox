@@ -8,6 +8,17 @@
     <meta name="author" content="">
     <%= stylesheet_link_tag "application", :media => "all" %>
     <%= javascript_include_tag "application" %>
+      <script type="text/javascript">
+      $(function () {
+          $('body').popover({
+              selector: '[data-toggle="popover"]'
+          });
+
+          $('body').tooltip({
+              selector: 'a[rel="tooltip"], [data-toggle="tooltip"]'
+          });
+      });
+      </script>
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
   </head>
