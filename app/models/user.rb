@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   				  :first_name, :last_name, :profile_name
   # attr_accessible :title, :body
   has_many :rewards
+  has_many :tasks
 
   def full_name
     first_name + " " + last_name

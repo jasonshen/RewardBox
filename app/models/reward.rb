@@ -1,8 +1,9 @@
 class Reward < ActiveRecord::Base
   attr_accessible :description, :name, :size, :user_id
   belongs_to :user
+  has_many :tasks
   validates :description, :length => { :maximum => 140 }
-  scope :random_of_size, -> (reward_size) { where(size: reward_size).sample }
+  # scope :random_of_size, -> (reward_size) { where(size: reward_size).sample }
 
 
   def self.test_redeem
@@ -30,7 +31,7 @@ class Reward < ActiveRecord::Base
     return reward_array[random]
   end
 
-    #def self.random_of_size(size)
-        #return self.where(size: size).sample
-    #end
+    def self.random_of_size(size)
+        return self.where(size: size).sample
+    end
 end
