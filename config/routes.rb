@@ -1,6 +1,7 @@
 RewardBox::Application.routes.draw do
 
   resources :rewards
+  resources :tasks
   
   root to: 'rewards#index'
 
@@ -21,19 +22,8 @@ RewardBox::Application.routes.draw do
   match "/help", to: "static_pages#help"
   match "/howitworks", to: "static_pages#howitworks"
 
-  get "task/new"
 
-  get "task/create"
 
-  get "task/update"
-
-  get "task/edit"
-
-  get "task/destroy"
-
-  get "task/index"
-
-  get "task/show"
 
 
 
