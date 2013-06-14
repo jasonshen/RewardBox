@@ -3,7 +3,7 @@ RewardBox::Application.routes.draw do
   resources :rewards
   resources :tasks
   
-  root to: 'rewards#index'
+  root to: 'tasks#index'
 
   devise_for :users
 

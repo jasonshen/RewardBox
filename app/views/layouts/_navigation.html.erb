@@ -2,6 +2,8 @@
 <ul class="nav">
 	<% if user_signed_in? %>
 		<li><%= link_to "+ New Reward", new_reward_path rescue "help!" %></li>
+		<li><%= link_to "+ New Task", tasks_path rescue "help!" %></li>
+
 	<% else %>
 	<% end %>
 </ul>

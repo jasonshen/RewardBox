@@ -22,147 +22,135 @@
 
 
 
-<div class="btn-group">
-  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-    	Monday (<%= @monday_tasks.length %>)
-		<span class="caret"></span>
-  	</a>
-  	<ul class="dropdown-menu">
-    <!-- dropdown menu links -->
-	<% @monday_tasks.reverse_each do |task| %>
-	  	<li><%= link_to task.content + " (" + time_ago_in_words(task.created_at) + ")", task_path(task), tabindex: "-1" %> </li>
 
-	<% end %>
-  </ul>
+<div class="main-section" id="explanation">
+	<ul id="myTab" class="nav nav-tabs">
+	<li class="active"><a href="#monday" data-toggle="tab">Monday (<%= @monday_tasks.length %>)</a></li>
+	<li><a href="#tuesday" data-toggle="tab">Tuesday (<%= @tuesday_tasks.length %>)</a></li>
+	<li><a href="#wednesday" data-toggle="tab">Wednesday (<%= @wednesday_tasks.length %>)</a></li>
+	<li><a href="#thursday" data-toggle="tab">Thursday (<%= @thursday_tasks.length %>)</a></li>
+	<li><a href="#friday" data-toggle="tab">Friday (<%= @friday_tasks.length %>)</a></li>
+	<li><a href="#saturday" data-toggle="tab">Saturday (<%= @saturday_tasks.length %>)</a></li>
+	<li><a href="#sunday" data-toggle="tab">Sunday (<%= @sunday_tasks.length %>)</a></li>
+	</ul>
+
+
+
+
+	<div id="myTabContent" class="tab-content">
+
+		<div class="tab-pane fade in active" id="monday">
+
+			<div class="row-fluid">
+
+				<% @monday_tasks.reverse_each do |task| %>
+		  			<p><%= link_to task.content, task_path(task), tabindex: "-1" %></p>
+		  		<% end %>
+
+			</div>
+		</div>
+
+
+		<div class="tab-pane fade" id="tuesday">
+
+
+			<div class="row-fluid">
+
+				<% @tuesday_tasks.reverse_each do |task| %>
+		  			<p><%= link_to task.content, task_path(task), tabindex: "-1" %></p>
+		  		<% end %>
+
+			</div>
+
+		</div>
+
+		<div class="tab-pane fade" id="wednesday">
+
+			<div class="row-fluid" >
+
+				<% @wednesday_tasks.reverse_each do |task| %>
+		  			<p><%= link_to task.content, task_path(task), tabindex: "-1" %></p>
+		  		<% end %>
+			
+			</div>
+
+		</div>
+
+		<div class="tab-pane fade" id="thursday">
+
+			<div class="row-fluid" >
+
+			<% @thursday_tasks.reverse_each do |task| %>
+	  			<p><%= link_to task.content, task_path(task), tabindex: "-1" %></p>
+	  		<% end %>
+			
+			</div>
+
+		</div>
+
+		<div class="tab-pane fade" id="friday">
+
+			<div class="row-fluid" >
+
+			<% @friday_tasks.reverse_each do |task| %>
+	  			<p><%= link_to task.content, task_path(task), tabindex: "-1" %></p>
+	  		<% end %>
+			
+			</div>
+
+		</div>
+
+		<div class="tab-pane fade" id="saturday">
+
+			<div class="row-fluid" >
+
+			<p>Saturday Shit</p>
+			
+			</div>
+
+		</div>
+
+		<div class="tab-pane fade" id="sunday">
+
+			<div class="row-fluid" >
+
+			<% @sunday_tasks.reverse_each do |task| %>
+	  		<%= link_to task.content + " (" + time_ago_in_words(task.created_at) + ")", task_path(task), tabindex: "-1" %>
+	  		<% end %>
+			
+			</div>
+
+		</div>
+
+	</div>
+
 </div>
 
 
 
 
-<div class="btn-group">
-    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-    	Tuesday (<%= @tuesday_tasks.length %>)
-		<span class="caret"></span>
-  	</a>
-  	<ul class="dropdown-menu">
-    <!-- dropdown menu links -->
-	<% @tuesday_tasks.reverse_each do |task| %>
-	  	<li><%= link_to task.content + " (" + time_ago_in_words(task.created_at) + ")", task_path(task), tabindex: "-1" %> </li>
 
-	<% end %>
-  </ul>
 
+
+
+
+<br><br>
+
+
+<div class="accordion-group">
+	<div class="accordion-heading">
+		<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+	  All Tasks
+		</a>
+	</div>
+	<div id="collapseOne" class="accordion-body collapse">
+		<div class="accordion-inner">
+			<% @tasks.reverse_each do |task| %>
+			<div class="list-task">
+			<p><%= task.content %></p>
+			<small><%= link_to time_ago_in_words(task.created_at) + " ago", task_path(task) rescue "No date?" %></small>
+			<% end %>
+			</div>
+		</div>
+	</div>
 </div>
-
-
-
-<div class="btn-group">
-    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-    	Wednesday (<%= @wednesday_tasks.length %>)
-		<span class="caret"></span>
-  	</a>
-  	<ul class="dropdown-menu">
-    <!-- dropdown menu links -->
-	<% @wednesday_tasks.reverse_each do |task| %>
-	  	<li><%= link_to task.content + " (" + time_ago_in_words(task.created_at) + ")", task_path(task), tabindex: "-1" %> </li>
-	<% end %>
-  </ul>
-
-</div>
-
-
-
-
-<div class="btn-group">
-	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-    	Thursday (<%= @thursday_tasks.length %>)
-		<span class="caret"></span>
-	</a>
-  	<ul class="dropdown-menu">
-		<% @thursday_tasks.reverse_each do |task| %>
-	  		<li><%= link_to task.content, task_path(task), tabindex: "-1" %> </li>
-	  	<% end %>
-  </ul>
-</div>
-
-
-<div class="btn-group">
-	<a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-    	Friday (<%= @friday_tasks.length %>)
-		<span class="caret"></span>
-	</a>
-  	<ul class="dropdown-menu">
-		<% @friday_tasks.reverse_each do |task| %>
-	  		<li><%= link_to task.content, task_path(task), tabindex: "-1" %> </li>
-	  	<% end %>
-  </ul>
-</div>
-
-
-<div class="btn-group">
-  <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-    Saturday <%= @saturday_tasks.length %>
-	<span class="caret"></span>
-  	</a>
-  	<ul class="dropdown-menu">
-		<% @saturday_tasks.reverse_each do |task| %>
-	  		<li><%= link_to task.content, task_path(task), tabindex: "-1" %> </li>
-	  	<% end %>
-  </ul>
-</div>
-
-
-
-<div class="btn-group">
-    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
-    	Sunday (<%= @sunday_tasks.length %>)
-		<span class="caret"></span>
-  	</a>
-  	<ul class="dropdown-menu">
-    <!-- dropdown menu links -->
-	<% @sunday_tasks.reverse_each do |task| %>
-	  	<li><%= link_to task.content + " (" + time_ago_in_words(task.created_at) + ")", task_path(task), tabindex: "-1" %> </li>
-	<% end %>
-  </ul>
-
-</div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h4>Past Week</h4>
-	<% @new_tasks = @tasks.where("created_at > ?", 2.days.ago) %>-
-	<% @old_tasks = @tasks.where("created_at < ?", 2.days.ago) %>
-
-	<% @new_tasks.reverse_each do |task| %>
-	  <div class="list-task">
-	  	<p><%= task.content %></p>
-	  	<small><%= link_to task.recently, task_path(task) %></small>
-	  </div>
-	<% end %>
-
-<% if @old_tasks != nil %>
-	<hr>
-	<h4>Older</h4>
-
-	<% @old_tasks.reverse_each do |task| %>
-	  <div class="list-task">
-	  	<p><%= task.content %></p>
-	  	<small><%= link_to time_ago_in_words(task.created_at) + " ago", task_path(task) %></small>
-	  </div>
-	<% end %>
-<% end %>
