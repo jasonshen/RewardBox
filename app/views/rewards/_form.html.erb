@@ -12,7 +12,7 @@
   <% end %>
 
   <%= f.input :name %>
-  <%= f.input :description %>
+  <%= f.input :description, placeholder: "Ex: Three rounds of Angry Birds" %>
   <%= f.input :size, collection: 1..3, default: 1 %>
   <div align="left">
     <a href="#" data-toggle="popover" data-original-title="What is the deal with Reward Size?" title data-content= "Size relates to how 'big' the reward is, and thus it's frequency of appearing. Checking Facebook --> 1 (more frequent). Fancy night out --> 3 (less frequent).">What is size?</a>

@@ -20,11 +20,11 @@ class User < ActiveRecord::Base
     num = rand(12)
     case num
     when 0
-      return self.random_reward(3).description rescue self.random_reward(2).description rescue self.random_reward(1).description
+      return self.random_reward(3) rescue self.random_reward(2) rescue self.random_reward(1)
     when 1..3
-      return  self.random_reward(2).description rescue self.random_reward(1).description
+      return  self.random_reward(2) rescue self.random_reward(1)
     when 4..11
-      return self.random_reward(1).description
+      return self.random_reward(1)
     end
   end
 
@@ -46,5 +46,10 @@ class User < ActiveRecord::Base
     return @size_check
   end
 
+
+  # the idea is that this returns an hash with all the tasks done this week, with :monday => an array of tasks that were done this current monday
+  def current_week_tasks
+    @current_week_tasks = {monday:[], tuesday:[], wednesday:[], thursday: [], friday: [], saturday:[], sunday:[]}
+  end
 
 end

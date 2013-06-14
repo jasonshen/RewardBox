@@ -2,7 +2,7 @@ class Reward < ActiveRecord::Base
   attr_accessible :description, :name, :size, :user_id
   belongs_to :user
   has_many :tasks
-  validates :description, :length => { :maximum => 140 }
+  validates :description, :length => { minimum: 5, :maximum => 140 }
   # scope :random_of_size, -> (reward_size) { where(size: reward_size).sample }
 
 

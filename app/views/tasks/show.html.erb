@@ -1,2 +1,11 @@
-<h1>Task#show</h1>
-<p>Find me in app/views/task/show.html.erb</p>
+You completed
+<h3><%= @task.content %></h3>
+and earned the reward of:
+
+<div class="big-reward">
+	<%= @task.reward_description %>
+</div>
+<p>
+	<%= link_to 'Edit this task', edit_task_path(@task) %> | <%= link_to 'Delete this task', @task, method: :delete, data: { confirm: 'Are you sure?' } %> |
+	<%= link_to 'Back to Home', tasks_path %>
+</p>

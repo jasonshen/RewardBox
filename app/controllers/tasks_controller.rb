@@ -16,7 +16,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.save
-        format.html { redirect_to @task, notice: 'task was successfully created.' }
+        format.html { redirect_to @task, notice: 'Your task was successfully created! Rock on!' }
         format.json { render json: @task, status: :created, location: @task }
       else
         format.html { render action: "new" }
@@ -30,7 +30,7 @@ class TasksController < ApplicationController
 
     respond_to do |format|
       if @task.update_attributes(tasks_params)
-        format.html { redirect_to @task, notice: 'task was successfully updated.' }
+        format.html { redirect_to @task, notice: 'Your task was successfully updated! Rock on!' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -58,7 +58,9 @@ class TasksController < ApplicationController
 
   def index
     if user_signed_in?
-      @tasks = current_user.tasks.all
+      @task = current_user.tasks.new
+      @tasks = current_user.tasks
+      @tasks_this_week = current_user.tasks.where(created_at: (Time.now.beginning_of_week)..(Time.now.beginning_of_week + 7.days))
 
       respond_to do |format|
         format.html # index.html.erb

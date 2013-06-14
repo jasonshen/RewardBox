@@ -44,7 +44,7 @@ body {
 p {
 	font-size: 1.2em;
 	line-height: 1.4em;
-	margin: 5px;
+	margin: 5px 0px;
 }
 
 h2, h3 {
@@ -55,6 +55,10 @@ h2, h3 {
 h1 {
 	font-weight: 400;
 	color: #555;
+}
+
+.list-task {
+	margin: 10px 0px;
 }
 
 /* Custom container */
@@ -76,7 +80,6 @@ h1 {
 	font-size: 4em;
 	color: #1fc29e;
 }
-
 
 
 /* Footer

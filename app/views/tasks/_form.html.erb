@@ -1,0 +1,31 @@
+<%= simple_form_for(@task) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h3><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h3>
+
+      <ul>
+      <% @task.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.input :content, label: 'What did you just get done?', placeholder: "Spent 30 minutes revising a blog post", input_html: { :class => "span9", style: "font-size:1.5em; height:40px" } %>
+  <% if @task.reward_id == nil %>
+    <% @this_reward = current_user.redeem %>
+    <%= f.hidden_field :reward_id, value: @this_reward.id %>
+    <%= f.hidden_field :reward_description, value: @this_reward.description %>
+    <div class="form-actions">
+    <%= f.button :submit, :class => "btn-large btn btn-primary", :value => "Get your reward!" %>
+
+  </div>
+  <% else %>
+      <div class="form-actions">
+      <%= f.button :submit %>
+    </div>
+  <% end %>
+
+
+
+<% end %>
